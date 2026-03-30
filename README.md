@@ -30,3 +30,16 @@ npm run dev     # watch mode (auto-rebuild on save)
 npm run build   # production build
 npm run lint    # TypeScript type check
 ```
+
+## Releasing
+
+Ein neues Release wird automatisch über GitHub Actions erstellt, sobald ein Version-Tag gepusht wird:
+
+```bash
+git tag 1.0.1
+git push origin 1.0.1
+```
+
+Die Pipeline baut das Plugin und erstellt ein GitHub Release mit `main.js`, `styles.css` und `manifest.json` als Anhänge.
+
+> Das Tag muss dem Format `MAJOR.MINOR.PATCH` entsprechen, z. B. `1.0.1`.
